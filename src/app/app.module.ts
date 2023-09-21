@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { StudentComponent } from './Student/student.component';
 import { CoursesComponent } from './courses/courses.component';
 import { SocialCodeService } from './socialcode.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     StudentComponent,
-    CoursesComponent
+    CoursesComponent,
+    AdminComponent
     
   ],
   imports: [
@@ -26,6 +28,7 @@ import { SocialCodeService } from './socialcode.service';
     RouterModule.forRoot([
       {path: 'student-list', component: StudentComponent},
       {path: 'course-list', component: CoursesComponent},
+      {path: 'admin', component: AdminComponent},
       {path: '', redirectTo: '/student-list', pathMatch: 'full'}
     ]),
   ],
