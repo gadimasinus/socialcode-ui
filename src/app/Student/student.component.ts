@@ -8,6 +8,7 @@ import {Student} from '../socialcode.service'
 })
 export class StudentComponent implements OnInit {
   students: Student[] = []; 
+  version :string ='';
   constructor(private socialCodeService: SocialCodeService) {
   }
 
