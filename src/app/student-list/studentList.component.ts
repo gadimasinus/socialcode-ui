@@ -14,9 +14,15 @@ export class StudentListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.socialCodeService.getStudentsByTeacher(1).subscribe((studentData: Person[]) => {
+   /* this.socialCodeService.getStudentsByTeacher(1).subscribe((studentData: Person[]) => {
+      console.log(studentData)
+      this.students = studentData;
+    });*/
+
+    this.socialCodeService.getAllUsersByType("Admin").subscribe((studentData: Person[]) => {
       console.log(studentData)
       this.students = studentData;
     });
+
   }
 }

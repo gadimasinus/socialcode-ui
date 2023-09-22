@@ -33,9 +33,12 @@ export const USER_TYPE: Item[] = [
 @Injectable()
 export class SocialCodeService {
 
+    headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
     constructor(private httpClient: HttpClient) {}
      
-    baseUrl: string = "https://4i7ppy3id9.us-east-1.awsapprunner.com/";
+    //baseUrl: string = "https://4i7ppy3id9.us-east-1.awsapprunner.com/";
+      baseUrl: string = "https://djz5npuyph.us-east-1.awsapprunner.com/";
+
     
     getStudentsByTeacher(teacherId: number): Observable<Person[]> {
         return of(studentsData);
@@ -47,6 +50,18 @@ export class SocialCodeService {
     }
     getAllCourses(): Observable<Course[]> {
         return of(coursesData);
+    }
+
+    registerUser(item : Person) : Observable<Person> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
+        const body = JSON.stringify(item);
+        return this.httpClient.post<any>(this.baseUrl +"api/user", body, { headers })
+    }
+
+    getAllUsersByType(userType : string): Observable<any> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
+        return this.httpClient.get(this.baseUrl +"api/user/"+userType,{headers});
+
     }
 }
 

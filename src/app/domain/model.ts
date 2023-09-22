@@ -1,16 +1,16 @@
-export interface Person {  
-    id: Number;  
-    firstName: String;  
-    lastName: String;  
-    email: String;  
-    address: String;  
-    phone : String;
-    userType :String;
+export class Person {  
+    id: Number | undefined;  
+    firstName: String | undefined;  
+    lastName: String | undefined;  
+    email!: String;  
+    address1!: String;  
+    phone! : String;
+    userType! :String;
 } 
 
-export interface Course {  
-    id: Number;  
-    courseName: String;  
-    courseDesc: String;  
-    courseCategory: String;  
+export class Course {  
+    id!: Number;  
+    courseName!: String;  
+    courseDesc!: String;  
+    courseCategory!: String;  
 } 

@@ -4,7 +4,7 @@
     "firstName": "Jack",  
     "lastName": "Lee",  
     "email": "jack@gmail.com",  
-    "address": "123 1st Street, NY",
+    "address1": "123 1st Street, NY",
     "phone" :"123123123",
     "userType": "Learner"  
      
@@ -14,7 +14,7 @@
     "firstName": "Chris",  
     "lastName": "Green",  
     "email": "green@gmail.com",  
-    "address": "123 2nr Street, NY",
+    "address1": "123 2nr Street, NY",
     "phone" :"123456789",
     "userType": "Learner" 
   },  
@@ -23,7 +23,7 @@
     "firstName": "Tim",  
     "lastName": "David",  
     "email": "tim@gmail.com",  
-    "address": "123 14th Street, NY",
+    "address1": "123 14th Street, NY",
     "phone" :"99999999",
     "userType": "Learner" 
   }  

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SocialCodeService } from '../socialcode.service';
+import { Person } from '../domain/model';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +9,9 @@ import { SocialCodeService } from '../socialcode.service';
 })
 export class AdminComponent {
     mode : string ="Learner";
+    person!: Person;
     constructor(private socialCodeService: SocialCodeService) {
+        this.person = new Person();
     }
 
     registerStudent() {
@@ -18,6 +21,7 @@ export class AdminComponent {
 
     registerTeacher() {
         this.mode="Teacher";
+        
         console.log("Register teacher called....");
     }
 
@@ -31,6 +35,12 @@ export class AdminComponent {
     }
     registerClicked() {
         console.log("Register called for " + this.mode );
+        console.log(this.person);
+        this.socialCodeService.registerUser(this.person).subscribe(
+            (savedPerson: Person) => {
+                console.log(savedPerson)
+            }
+        )
     }
 
     
