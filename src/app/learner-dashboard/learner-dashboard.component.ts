@@ -9,7 +9,7 @@ import { Assignment } from '../domain/model';
 })
 export class LearnerDashboardComponent implements OnInit {
     mode : string = "assignment";
-    selectedAssignmentId? : number;
+    selectedAssignmentId? : string;
     assignments?: Assignment[]; 
     selectedAssignment? : Assignment;
     fileName?:String;
@@ -18,7 +18,7 @@ export class LearnerDashboardComponent implements OnInit {
         
     }
     ngOnInit(): void {
-        this.socialCodeService.getAllAssignmentById(10).subscribe((responseData: Assignment[]) => {
+        this.socialCodeService.getAllAssignmentById("10").subscribe((responseData: Assignment[]) => {
             console.log(responseData)
             this.assignments = responseData;
           },

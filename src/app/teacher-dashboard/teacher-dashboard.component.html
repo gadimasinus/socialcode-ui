@@ -15,6 +15,16 @@
 
   <div  *ngIf="mode=='assignAssignment'">
     <div>
+
+        <div  class="dropdown ">
+            <label>Select Assignment</label>
+            <div>
+                <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedAssignmentId" (change)="onAssignemntSelected()">
+                    <option *ngFor="let x of assignments" [value]="x.assignmentId" [selected]="x">{{x.assignmentName}} </option>
+                </select>
+            </div>
+        </div>
+        <br>
         <div  class="dropdown ">
             <label>Select Student</label>
             <div>
@@ -23,8 +33,20 @@
                 </select>
             </div>
         </div>
+
+        <div>
+            <td><a (click)='onAddSelectedStudent()' class="link-primary">Add</a></td>
+        </div>
         
-        
+        <div>
+            <br>
+            <div *ngFor="let x of learnersForAssignment">
+               <label>{{x.firstName}} {{x.lastName}}</label>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="onAssignmentClick()">Assign</button>
+        </div>
     </div>
   </div>
 
@@ -68,7 +90,9 @@
     </div>
     <br>
     <div>
+        <br>
         <label *ngIf="selectedLearner">{{selectedLearner.firstName}} {{selectedLearner.lastName}} Assignments</label>
     </div>
+    
   </div>
 </div>

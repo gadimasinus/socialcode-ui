@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocialCodeService } from '../socialcode.service';
 import { Course, Person } from '../domain/model';
 
@@ -7,13 +7,19 @@ import { Course, Person } from '../domain/model';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
     mode : string ="Learner";
     person!: Person;
     status : string ="";
     course!: Course;
+    
     constructor(private socialCodeService: SocialCodeService) {
         this.person = new Person();
+        
+        
+    }
+    ngOnInit(): void {
+    
     }
 
     registerStudent() {

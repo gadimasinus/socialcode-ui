@@ -1,5 +1,5 @@
 export class Person {  
-    id: Number | undefined;  
+    id: String | undefined;  
     firstName: String | undefined;  
     lastName: String | undefined;  
     email!: String;  
@@ -9,14 +9,14 @@ export class Person {
 } 
 
 export class Course {  
-    id!: Number;  
+    id!: String;  
     courseName!: String;  
     description!: String;  
     category!: String;  
 } 
 
 export class Assignment {  
-    assignmentId!: Number;  
+    assignmentId!: String;  
     assignmentName!: String;  
     teachers!: number[];  
     learners!: number[];  

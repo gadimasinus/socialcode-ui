@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
-import {Item} from '../socialcode.service';
+import {Item, SocialCodeService} from '../socialcode.service';
 import {USER_TYPE} from '../socialcode.service';
+import { Person } from '../domain/model';
 
 
 @Component({
@@ -16,17 +17,23 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isLoading = false;
   userTypeList: Item[] = USER_TYPE;
+  loggedInUser : Person | undefined;
 
   radioSel:any;
   userTypeSelected:Item = USER_TYPE[0];
   userTypeSelectedValue:number=1;
 
+  userName : string="";
+  userPwd : string="";
+
+
   constructor(
      private router: Router,
     //private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private socialCodeService: SocialCodeService
   ) {
-    this.createForm();
+    //this.createForm();
   }
 
   ngOnInit() {}
@@ -44,19 +51,23 @@ export class LoginComponent implements OnInit {
   }
 
   getSelecteditem(item : Item)  {
-    console.log(item);
     this.radioSel = this.userTypeList.find(Item => Item.value == this.userTypeSelectedValue);
   }
-  // Radio Change Event
+  
   onItemChange(item : Item){
-    console.log(item)
     this.getSelecteditem(item);
   }
 
   onLoginClick() {
-    //move to main app dashboard
-    console.log(this.loginForm.value);
+    
+    
+    //get login id and save it to variable
+    this.loggedInUser = new  Person();
+    this.loggedInUser.id ="10";
+    this.loggedInUser.email =this.userName;
+    this.socialCodeService.setLogggedInUser(this.loggedInUser);
    
+    //move to main app dashboard
     if(this.radioSel.name == "TEACHER" )
       this.router.navigate(['/teacher-dashboard']);
     else if(this.radioSel.name =="ADMIN")

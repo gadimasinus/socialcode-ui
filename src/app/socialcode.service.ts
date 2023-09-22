@@ -31,17 +31,37 @@ export const USER_TYPE: Item[] = [
    
 ];
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class SocialCodeService {
 
-    headers: HttpHeaders = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
+    //headers: HttpHeaders = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
+    loginId: string ='';
+    loogedInUser : Person | undefined;
     constructor(private httpClient: HttpClient) {}
      
     //baseUrl: string = "https://4i7ppy3id9.us-east-1.awsapprunner.com/";
       baseUrl: string = "https://djz5npuyph.us-east-1.awsapprunner.com/";
 
     
-    getStudentsByTeacher(teacherId: number): Observable<Person[]> {
+    getLoginId() {
+        if(this.loogedInUser) {
+            this.loogedInUser.id;
+        }
+        return "-1";
+    }
+
+    setLogggedInUser(val : Person) {
+        this.loogedInUser = val;
+        console.log(this.loogedInUser);
+    }
+
+    getLoggedInUser() {
+        return this.loogedInUser;
+    }
+
+    getStudentsByTeacher(teacherId: string): Observable<Person[]> {
         return of(studentsData);
     }
 
@@ -51,6 +71,11 @@ export class SocialCodeService {
     }
     getAllCourses(): Observable<Course[]> {
         return of(coursesData);
+    }
+
+    getAllCoursesById(id : string | undefined): Observable<any> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
+        return this.httpClient.get(this.baseUrl +"api/course/" +id,{headers});
     }
 
     registerUser(item : Person) : Observable<Person> {
@@ -70,7 +95,7 @@ export class SocialCodeService {
         return this.httpClient.get(this.baseUrl +"api/user/"+userType,{headers});
 
     }
-    getAllAssignmentById(id: number): Observable<any>  {
+    getAllAssignmentById(id: string | undefined): Observable<any>  {
         const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
         return this.httpClient.get(this.baseUrl +"api/assignment/status",{headers});
 

@@ -15,39 +15,28 @@
             <h4 class="card-title text-center">
               <i class="far fa-3x fa-user-circle text-muted"></i>
             </h4>
-            <form (ngSubmit)="login()" novalidate>
+            <div  novalidate>
               <div class="m-3">
                 <label class="d-block my-3">
                   <input
                     type="text"
                     class="form-control"
-                    formControlName="username"
+                    [(ngModel)]="userName"
                     autocomplete="username"
                     [placeholder]="'Username' "
                   />
-                  <span hidden >Username</span>
-                  <small
-                    [hidden]="loginForm.controls['username'].valid || loginForm.controls['username'].untouched"
-                    class="text-danger"
-                  >
-                    Username is required
-                  </small>
+                  
+                  
                 </label>
                 <label class="d-block my-3">
                   <input
                     type="password"
                     class="form-control"
-                    formControlName="password"
+                    [(ngModel)]="userPwd"
                     autocomplete="password"
                     [placeholder]="'Password' "
                   />
-                  <span hidden >Password</span>
-                  <small
-                    [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].untouched"
-                    class="text-danger"
-                  >
-                    Password is required
-                  </small>
+                  
                 </label>
                
 
@@ -58,7 +47,7 @@
                   <span>Login</span>
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
