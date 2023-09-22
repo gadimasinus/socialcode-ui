@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import studentsData from './data/students.json';  
 import coursesData from './data/course.json';  
+import assignmentData from './data/assignment.json';  
 import { Person , Course} from './domain/model';
 
 
@@ -33,7 +34,7 @@ export const USER_TYPE: Item[] = [
 @Injectable()
 export class SocialCodeService {
 
-    headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
+    headers: HttpHeaders = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
     constructor(private httpClient: HttpClient) {}
      
     //baseUrl: string = "https://4i7ppy3id9.us-east-1.awsapprunner.com/";
@@ -58,9 +59,20 @@ export class SocialCodeService {
         return this.httpClient.post<any>(this.baseUrl +"api/user", body, { headers })
     }
 
+    registerCourse(item : Course) : Observable<Course> {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json');
+        const body = JSON.stringify(item);
+        return this.httpClient.post<any>(this.baseUrl +"api/course", body, { headers })
+    }
+
     getAllUsersByType(userType : string): Observable<any> {
         const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
         return this.httpClient.get(this.baseUrl +"api/user/"+userType,{headers});
+
+    }
+    getAllAssignmentById(id: number): Observable<any>  {
+        const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
+        return this.httpClient.get(this.baseUrl +"api/assignment/status",{headers});
 
     }
 }

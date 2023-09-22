@@ -1,0 +1,12 @@
+[
+  {
+    "assignmentId": 10,
+    "assignmentName": "Some Course",
+    "teachers": [
+      0
+    ],
+    "learners": [
+      0
+    ]
+  }
+]

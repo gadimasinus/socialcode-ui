@@ -2,20 +2,20 @@
   {  
     "id": 1,  
     "courseName": "Digital Literacy",  
-    "courseDesc": "Basic knowledge of computer",  
-    "courseCategory": "Computer Education"  
+    "description": "Basic knowledge of computer",  
+    "category": "Computer Education"  
   },  
   {  
    "id": 2,
     "courseName": "Game Design",  
-    "courseDesc": "Basic knowledge of gaming",  
-    "courseCategory": "Vide Games" 
+    "description": "Basic knowledge of gaming",  
+    "category": "Video Games" 
   },  
   {  
    "id": 3,  
     "courseName": "Web Desing",  
-    "courseDesc": "Building basic website",  
-    "courseCategory": "Computer Science" 
+    "description": "Building basic website",  
+    "category": "Computer Science" 
   }  
   
 ] 

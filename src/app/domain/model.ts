@@ -11,6 +11,13 @@ export class Person {
 export class Course {  
     id!: Number;  
     courseName!: String;  
-    courseDesc!: String;  
-    courseCategory!: String;  
+    description!: String;  
+    category!: String;  
+} 
+
+export class Assignment {  
+    assignmentId!: Number;  
+    assignmentName!: String;  
+    teachers!: number[];  
+    learners!: number[];  
 } 
