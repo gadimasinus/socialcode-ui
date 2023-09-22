@@ -1,2 +1,28 @@
-<h3>Courses</h3>
-<p>Get your courses here</p>
+<div class="container">  
+    <br/>
+    <br/>
+    <br/>
+   
+    <h3> Courses</h3>  
+      
+    <table class="table table-striped table-hover">  
+      <thead>  
+          <tr>  
+            <th scope="col">Id</th>  
+            <th scope="col">Course Name</th>  
+            <th scope="col">Course Description</th>  
+            <th scope="col">Course Category</th>  
+           
+          </tr>  
+      </thead>  
+      <tbody>  
+        <tr scope="row" *ngFor="let course of myCourses">  
+          <td>{{ course.id }}</td>  
+          <td>{{ course.courseName }}</td>  
+          <td>{{ course.courseDesc }}</td>  
+          <td>{{ course.courseCategory }}</td>  
+        
+        </tr>  
+      </tbody>  
+    </table>  
+  </div>  

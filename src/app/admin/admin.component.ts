@@ -7,24 +7,30 @@ import { SocialCodeService } from '../socialcode.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-
+    mode : string ="Learner";
     constructor(private socialCodeService: SocialCodeService) {
     }
 
     registerStudent() {
+        this.mode="Learner";
         console.log("Register student called....");
     }
 
     registerTeacher() {
+        this.mode="Teacher";
         console.log("Register teacher called....");
     }
 
-    assignCourse() {
+    registerCourse() {
+        this.mode="Course";
         console.log("Assign course called....");
     }
 
     assignAssignment() {
         console.log("Assign Assignment called....");
+    }
+    registerClicked() {
+        console.log("Register called for " + this.mode );
     }
 
     

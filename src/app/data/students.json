@@ -1,32 +1,31 @@
 [  
   {  
     "id": 1,  
-    "name": "Jack",  
+    "firstName": "Jack",  
+    "lastName": "Lee",  
     "email": "jack@gmail.com",  
-    "address": "123 1st Street, NY"  
+    "address": "123 1st Street, NY",
+    "phone" :"123123123",
+    "userType": "Learner"  
+     
   },  
   {  
     "id": 2,  
-    "name": "Peter",  
-    "email": "peter@gmail.com",  
-    "address": "123 2st Street, NY"  
+    "firstName": "Chris",  
+    "lastName": "Green",  
+    "email": "green@gmail.com",  
+    "address": "123 2nr Street, NY",
+    "phone" :"123456789",
+    "userType": "Learner" 
   },  
   {  
     "id": 3,  
-    "name": "Mary",  
-    "email": "mary@gmail.com",  
-    "address": "123 3rd Street, NY"  
-  },  
-  {  
-    "id": 4,  
-    "name": "Smith",  
-    "email": "smith@gmail.com",  
-    "address": "123 14th Street, NY"  
-  },  
-  {  
-    "id": 5,  
-    "name": "John",  
-    "email": "john@gmail.com",  
-    "address": "123 14th Street, NY" 
+    "firstName": "Tim",  
+    "lastName": "David",  
+    "email": "tim@gmail.com",  
+    "address": "123 14th Street, NY",
+    "phone" :"99999999",
+    "userType": "Learner" 
   }  
+  
 ]  

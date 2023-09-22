@@ -1,0 +1,74 @@
+<div class="container">
+    <br>
+   
+    <nav>
+       <button type="button" class="btn btn-primary" (click)="onMyStudentClick()">My Learners</button>
+       <button type="button" class="btn btn-primary" (click)="onMyCourseClick()">My Courses</button>
+       <button type="button" class="btn btn-primary" (click)="onCreateAssignmentClick()">Create Assignment</button>
+       <button type="button" class="btn btn-primary" (click)="onAssignAssignmentClick()">Assign Assignment</button>
+       <button type="button" class="btn btn-primary" (click)="onViewAssignmentClick()">View Assignment</button>
+    </nav>
+      
+  <app-studentList *ngIf="mode=='learner'"></app-studentList>
+
+  <app-courses *ngIf="mode=='course'"></app-courses>
+
+  <div  *ngIf="mode=='assignAssignment'">
+    <div>
+        <div  class="dropdown ">
+            <label>Select Student</label>
+            <div>
+                <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedLearnerId" (change)="onStudentSelected()">
+                    <option *ngFor="let x of learners" [value]="x.id" [selected]="x">{{x.firstName}} {{x.lastName}}</option>
+                </select>
+            </div>
+        </div>
+        
+        
+    </div>
+  </div>
+
+  <div *ngIf="mode=='createAssignment'">
+    <div  class="dropdown ">
+        <label>Select Course</label>
+        <div>
+            <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedCourseId" (change)="onCourseSelected()">
+                <option *ngFor="let x of myCourses" [value]="x.id" [selected]="x">{{x.courseName}}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="col-md-12">
+        <div class="form-outline  mb-0">
+          <input type="text" id="assignName" class="form-control" placeholder="Assignment Name" />
+        </div>
+    </div>
+    <br>
+    <input type="file" class="file-input"
+   (change)="onFileSelected($event)" #fileUpload>
+
+    <div class="file-upload">
+
+        {{fileName || "No file uploaded yet."}}
+
+        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+            
+        </button>
+    </div>
+  </div>
+
+  <div *ngIf="mode=='viewAssignment'">
+    <div  class="dropdown ">
+        <label>Select Student</label>
+        <div>
+            <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedLearnerId" (change)="onStudentSelected()">
+                <option *ngFor="let x of learners" [value]="x.id" [selected]="x">{{x.firstName}} {{x.lastName}}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <label *ngIf="selectedLearner">{{selectedLearner.firstName}} {{selectedLearner.lastName}} Assignments</label>
+    </div>
+  </div>
+</div>

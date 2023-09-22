@@ -1,39 +1,25 @@
-<h1>Social Codeing</h1>
-
-<nav>
-  <a class="button"
-     routerLink="/student-list"
-     routerLinkActive="activebutton"
-     ariaCurrentWhenActive="page">
-    Students
-  </a> |
-  <a class="button"
-     routerLink="/course-list"
-     routerLinkActive="activebutton"
-     ariaCurrentWhenActive="page">
-    Courses
-  </a> |
-  <a class="button"
-    routerLink="/admin"
-    routerLinkActive="activebutton"
-    ariaCurrentWhenActive="page">
-   Admin
-  </a>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <span class="navbar-brand mb-0 h1">Social Coding</span>
 </nav>
+
+<div>
+
 <router-outlet></router-outlet>
 <div>
-  <footer class="footer">
+  <nav class="footer  navbar-light bg-light fixed-bottom">
     <div>{{apiVersion}}</div>
-  </footer>
+  </nav>
 </div>
 <div style="display: none;">
 
 
 <nav>
   <a class="button" routerLink="/student-list">Students</a> |
-  <a class="button" routerLink="/course-list">Courses</a>
+  <a class="button" routerLink="/course-list">Courses</a> |
+  <a class="button" routerLink="/login">Login</a>
 </nav>
 
 
+</div>
 </div>
 

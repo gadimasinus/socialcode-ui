@@ -1,0 +1,11 @@
+<div class="container">
+    <br>
+   
+    <nav>
+       <button type="button" class="btn btn-primary" (click)="onMyAssignmentClick()">My Assignments</button>
+       <button type="button" class="btn btn-primary" (click)="onMyCourseClick()">My Courses</button>
+    </nav>
+      
+  <app-studentList *ngIf="mode=='assignment'"></app-studentList>
+  <app-courses *ngIf="mode=='course'"></app-courses>
+</div>
