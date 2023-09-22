@@ -1,16 +1,12 @@
 <nav class="navbar navbar-dark  bg-primary fixed-top">
   <span class="navbar-brand mb-0 h1">Social Coding</span>
-  <span  *ngIf="loggedUser"  class="navbar-brand mb-0 h1">Logged As : </span>
+  
 </nav>
 
 <div>
 
 <router-outlet></router-outlet>
-<div>
-  <nav class="footer  navbar-light bg-light fixed-bottom">
-    <div *ngIf="loggedUser">Logged As : {{loggedUser.email}}</div>
-  </nav>
-</div>
+
 <div style="display: none;">
 
 

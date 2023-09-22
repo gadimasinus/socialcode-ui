@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { LearnerDashboardComponent } from './learner-dashboard/learner-dashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LearnerDashboardComponent } from './learner-dashboard/learner-dashboard
     CoursesComponent,
     AdminComponent,
     TeacherDashboardComponent,
-    LearnerDashboardComponent
+    LearnerDashboardComponent,
+    FooterComponent
     
   ],
   imports: [

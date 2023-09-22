@@ -10,7 +10,7 @@ import { Person } from './domain/model';
 export class AppComponent implements OnInit {
   title = 'Social Code';
   apiVersion :string ='';
-  loggedUser : Person | undefined;
+  
   constructor(private socialCodeService: SocialCodeService) {
   }
   ngOnInit(): void {
@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
        this.apiVersion = serviceVersion;
     });*/
 
-    this.loggedUser = this.socialCodeService.getLoggedInUser();
-    console.log("logged user" + JSON.stringify(this.loggedUser));
+    
   }
 }
