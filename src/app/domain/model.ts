@@ -1,5 +1,5 @@
 export class Person {  
-    id: String | undefined;  
+    userId: String | undefined;  
     firstName: String | undefined;  
     lastName: String | undefined;  
     email!: String;  
@@ -9,7 +9,7 @@ export class Person {
 } 
 
 export class Course {  
-    id!: String;  
+    courseId!: String;  
     courseName!: String;  
     description!: String;  
     category!: String;  

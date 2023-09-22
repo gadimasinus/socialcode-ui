@@ -92,11 +92,11 @@ export class TeacherDashboardComponent {
 
   onStudentSelected() {
     console.log(this.selectedLearnerId);
-    this.selectedLearner = this.learners.find(Item => Item.id == this.selectedLearnerId);
+    this.selectedLearner = this.learners.find(Item => Item.userId == this.selectedLearnerId);
 	}
   onCourseSelected() {
 		console.log(this.selectedCourseId);
-    this.selectedCourse = this.myCourses.find(Item => Item.id == this.selectedCourseId);
+    this.selectedCourse = this.myCourses.find(Item => Item.courseId == this.selectedCourseId);
 	}
 
   onAssignemntSelected() {

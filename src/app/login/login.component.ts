@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
     
     //get login id and save it to variable
     this.loggedInUser = new  Person();
-    this.loggedInUser.id ="10";
+    this.loggedInUser.userId ="10";
     this.loggedInUser.email =this.userName;
     this.socialCodeService.setLogggedInUser(this.loggedInUser);
    

@@ -29,7 +29,7 @@
             <label>Select Student</label>
             <div>
                 <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedLearnerId" (change)="onStudentSelected()">
-                    <option *ngFor="let x of learners" [value]="x.id" [selected]="x">{{x.firstName}} {{x.lastName}}</option>
+                    <option *ngFor="let x of learners" [value]="x.userId" [selected]="x">{{x.firstName}} {{x.lastName}}</option>
                 </select>
             </div>
         </div>
@@ -55,7 +55,7 @@
         <label>Select Course</label>
         <div>
             <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedCourseId" (change)="onCourseSelected()">
-                <option *ngFor="let x of myCourses" [value]="x.id" [selected]="x">{{x.courseName}}</option>
+                <option *ngFor="let x of myCourses" [value]="x.courseId" [selected]="x">{{x.courseName}}</option>
             </select>
         </div>
     </div>
@@ -84,7 +84,7 @@
         <label>Select Student</label>
         <div>
             <select  class="col-md-12 browser-default custom-select" [(ngModel)]="selectedLearnerId" (change)="onStudentSelected()">
-                <option *ngFor="let x of learners" [value]="x.id" [selected]="x">{{x.firstName}} {{x.lastName}}</option>
+                <option *ngFor="let x of learners" [value]="x.userId" [selected]="x">{{x.firstName}} {{x.lastName}}</option>
             </select>
         </div>
     </div>

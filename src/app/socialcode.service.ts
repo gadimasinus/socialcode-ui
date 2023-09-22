@@ -47,7 +47,7 @@ export class SocialCodeService {
     
     getLoginId() {
         if(this.loogedInUser) {
-            this.loogedInUser.id;
+            this.loogedInUser.userId;
         }
         return "-1";
     }
