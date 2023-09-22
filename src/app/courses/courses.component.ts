@@ -14,9 +14,15 @@ export class CoursesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.socialCodeService.getAllCourses().subscribe((courseData: Course[]) => {
+    /*this.socialCodeService.getAllCourses().subscribe((courseData: Course[]) => {
+      console.log(courseData)
+      this.myCourses = courseData;
+    });*/
+
+    this.socialCodeService.getAllCoursesById("-1").subscribe((courseData: Course[]) => {
       console.log(courseData)
       this.myCourses = courseData;
     });
+
   }
 }

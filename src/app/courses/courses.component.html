@@ -8,7 +8,7 @@
     <table class="table table-striped table-hover">  
       <thead>  
           <tr>  
-            <th scope="col">Id</th>  
+            <!--<th scope="col">Id</th>  -->
             <th scope="col">Course Name</th>  
             <th scope="col">Course Description</th>  
             <th scope="col">Course Category</th>  
@@ -17,10 +17,11 @@
       </thead>  
       <tbody>  
         <tr scope="row" *ngFor="let course of myCourses">  
-          <td>{{ course.id }}</td>  
+          <!--<td>{{ course.id }}</td>  -->
           <td>{{ course.courseName }}</td>  
           <td>{{ course.description }}</td>  
           <td>{{ course.category }}</td>  
+          <td><a class="link-primary">View Curriculum</a></td> 
         
         </tr>  
       </tbody>  

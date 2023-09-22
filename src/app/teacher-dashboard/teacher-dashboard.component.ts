@@ -61,8 +61,8 @@ export class TeacherDashboardComponent {
   ngOnInit() {
 
     this.teacherId = this.socialCodeService.getLoginId();
-    
-    this.socialCodeService.getStudentsByTeacher(this.teacherId).subscribe((learnersData: Person[]) => {
+
+    this.socialCodeService.getAllUsersByType("Learner").subscribe((learnersData: Person[]) => {
       console.log(learnersData)
       this.learners = learnersData;
       

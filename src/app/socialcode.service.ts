@@ -75,7 +75,7 @@ export class SocialCodeService {
 
     getAllCoursesById(id : string | undefined): Observable<any> {
         const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
-        return this.httpClient.get(this.baseUrl +"api/course/" +id,{headers});
+        return this.httpClient.get(this.baseUrl +"api/course/" ,{headers});
     }
 
     registerUser(item : Person) : Observable<Person> {
@@ -92,7 +92,7 @@ export class SocialCodeService {
 
     getAllUsersByType(userType : string): Observable<any> {
         const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
-        return this.httpClient.get(this.baseUrl +"api/user/"+userType,{headers});
+        return this.httpClient.get(this.baseUrl +"api/user/",{headers});
 
     }
     getAllAssignmentById(id: string | undefined): Observable<any>  {
